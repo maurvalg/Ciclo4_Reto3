@@ -50,9 +50,9 @@ public class VegetarianService {
                     accesoryDb.get().setCategory(accesory.getCategory());
                 }
                 
-               // if (accesory.getDescription() != null) {
-               //     accesoryDb.get().setDescription(accesory.getDescription());
-               // }
+                if (accesory.getDescription() != null) {
+                   accesoryDb.get().setDescription(accesory.getDescription());
+                }
                 if (accesory.getPrice() != 0.0) {
                     accesoryDb.get().setPrice(accesory.getPrice());
                 }
