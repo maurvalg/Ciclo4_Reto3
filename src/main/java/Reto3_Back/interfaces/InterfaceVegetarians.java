@@ -5,6 +5,7 @@
 package Reto3_Back.interfaces;
 
 import java.util.List;
+import org.springframework.data.mongodb.repository.Query;
 
 import Reto3_Back.modelo.Vegetarian;
 import org.springframework.data.mongodb.repository.MongoRepository;
