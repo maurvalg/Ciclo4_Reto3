@@ -14,4 +14,11 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface InterfaceVegetarians extends MongoRepository<Vegetarian, String> {
     
+      @Query("{description: ?0}")
+	   // List<Vegetarian> findByDescriptionLike(final String status);
+	    List<Vegetarian> findByDescriptionContaining(final String description);
+	  
+	  @Query("{price: ?0}")
+	    List<Vegetarian> findByPriceLessThanEqual(final double status);
+    
 }
