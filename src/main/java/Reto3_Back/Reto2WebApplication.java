@@ -5,9 +5,9 @@
 //controlador
 
 
-package Reto2_Web;
-import Reto2_Web.interfaces.InterfaceUser;
-import Reto2_Web.interfaces.InterfaceVegetarians;
+package Reto3_Back;
+import Reto3_Back.interfaces.InterfaceUser;
+import Reto3_Back.interfaces.InterfaceVegetarians;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

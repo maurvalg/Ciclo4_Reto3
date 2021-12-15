@@ -1,11 +1,14 @@
 /*
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Reto2_Web.controlador;
-import Reto2_Web.servicio.UserService;
-import Reto2_Web.modelo.User;
+package Reto3_Back.controlador;
+import Reto3_Back.servicio.UserService;
+import Reto3_Back.modelo.User;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
@@ -29,14 +32,21 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin("*")
 public class UserController {
     
-     @Autowired
+
+    @Autowired
     private UserService userService;
-     
-     @GetMapping("/all")
+
+    @GetMapping("/all")
     public List<User> getAll() {
         return userService.getAll();
     }
-      @PostMapping("/new")
+    
+    @GetMapping("/{id}")
+    public Optional <User> getUser(@PathVariable("id") int id) {
+        return userService.getUser(id);
+    }
+
+    @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public User create(@RequestBody User user) {
         return userService.create(user);
@@ -47,17 +57,25 @@ public class UserController {
     public User update(@RequestBody User user) {
         return userService.update(user);
     }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id) {
         return userService.delete(id);
     }
+    
     @GetMapping("/{email}/{password}")
     public User authenticateUser(@PathVariable("email") String email, @PathVariable("password") String password) {
         return userService.authenticateUser(email, password);
     }
-      @GetMapping("/emailexist/{email}")
+    
+    @GetMapping("/emailexist/{email}")
     public boolean emailExists(@PathVariable("email") String email) {
         return userService.emailExists(email);
+    }
+    
+    @GetMapping("/birthday/{month}")
+    public List<User> birthtDayList(@PathVariable("month") String monthBirthtDay) {
+        return userService.birthtDayList(monthBirthtDay);
     }
 }

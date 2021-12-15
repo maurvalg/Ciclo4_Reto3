@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Reto2_Web.repositorio;
+package Reto3_Back.repositorio;
 
-import Reto2_Web.interfaces.InterfaceUser;
-import Reto2_Web.modelo.User;
+import Reto3_Back.interfaces.InterfaceUser;
+import Reto3_Back.modelo.User;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +49,11 @@ public class UserRepositorio {
     public Optional<User> authenticateUser(String email, String password) {
         return userCrudRepository.findByEmailAndPassword(email, password);
     }
+    
+    public List<User> birthtDayList(String monthBirthtDay) {
+        return userCrudRepository.findByMonthBirthtDay(monthBirthtDay);
+    }
+    
      
      
 }

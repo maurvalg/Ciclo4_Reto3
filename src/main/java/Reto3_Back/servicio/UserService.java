@@ -1,11 +1,12 @@
 /*
+
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Reto2_Web.servicio;
+package Reto3_Back.servicio;
 
-import Reto2_Web.modelo.User;
-import Reto2_Web.repositorio.UserRepositorio;
+import Reto3_Back.modelo.User;
+import Reto3_Back.repositorio.UserRepositorio;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -103,6 +104,10 @@ public class UserService {
         } else {
             return usuario.get();
         }
+    }
+    
+    public List<User> birthtDayList(String monthBirthtDay) {
+        return userRepository.birthtDayList(monthBirthtDay);
     }
     
 }
