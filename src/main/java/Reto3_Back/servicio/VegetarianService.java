@@ -86,7 +86,7 @@ public class VegetarianService {
     }
 
 
-    public List<Vegetarian> findByDescriptionContaining(String description) {
+    public List<Vegetarian> findByDescriptionLike(String description) {
         return clotheRepository.findByDescriptionLike(description);
     }
     
