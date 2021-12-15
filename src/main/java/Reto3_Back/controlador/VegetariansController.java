@@ -59,5 +59,15 @@ public class VegetariansController {
     public boolean delete(@PathVariable("reference") String reference) {
         return accessoryService.delete(reference);
     } 
+       
+           @GetMapping("/description/{description}")
+    public List<Vegetarian> findByDescriptionLike(@PathVariable("description") String description) {
+        return accessoryService.findByDescriptionContaining(description);
+    }
+    
+    @GetMapping("/price/{price}")
+    public List<Vegetarian> productByPrice(@PathVariable("price") double precio) {
+        return accessoryService.productByPrice(precio);
+    }
     
 }
