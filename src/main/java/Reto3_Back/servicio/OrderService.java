@@ -69,5 +69,10 @@ public class OrderService {
 	    public List<Order> ordersSalesManByState(String state, Integer id) {
 	        return orderRepository.ordersSalesManByState(state, id);
 	    }
+	
+	   public List<Order> ordersSalesManByID(Integer id){
+	        return orderRepository.ordersSalesManByID(id);
+	    }
+
 
 }
