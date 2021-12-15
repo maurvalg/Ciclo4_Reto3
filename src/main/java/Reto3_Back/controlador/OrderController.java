@@ -35,6 +35,11 @@ public class OrderController {
 	    public Optional<Order> getOrder(@PathVariable("id") int id) {
 	        return orderService.getOrder(id);
 	    }
+	
+	  @GetMapping("/salesman/{id}")
+	    public List<Order> ordersSalesManByID(@PathVariable("id") Integer id){
+	        return orderService.ordersSalesManByID(id);
+	    }
 
 	    @PostMapping("/new")
 	    @ResponseStatus(HttpStatus.CREATED)
