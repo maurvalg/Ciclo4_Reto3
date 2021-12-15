@@ -80,6 +80,17 @@ public class VegetarianService {
         }).orElse(false);
         return aBoolean;
     }
+     
+         public List<Vegetarian> productByPrice(double price) {
+        return clotheRepository.productByPrice(price);
+    }
+
+
+    public List<Vegetarian> findByDescriptionContaining(String description) {
+        return clotheRepository.findByDescriptionLike(description);
+    }
+    
+    
     
     
 }
