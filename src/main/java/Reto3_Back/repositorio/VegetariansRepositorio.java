@@ -38,4 +38,12 @@ public class VegetariansRepositorio {
     public void delete(Vegetarian clothe) {
         repository.delete(clothe);
     }
+    
+       public List<Vegetarian> productByPrice(double precio){
+        return repository.findByPriceLessThanEqual(precio);
+    }
+
+    public List<Vegetarian> findByDescriptionLike(String description){
+        return repository.findByDescriptionContaining(description);
+    }
 }
