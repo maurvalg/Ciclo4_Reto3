@@ -73,4 +73,16 @@ public class OrderRepository {
 
         return orders;
     }
+    
+        public List<Order> ordersSalesManByID(Integer id) {
+    	   Query query = new Query();
+    	        
+    	    Criteria criterio = Criteria.where("salesMan.id").is(id);
+    	    query.addCriteria(criterio);
+    	        
+    	    List<Order> orders = mongoTemplate.find(query, Order.class);
+    	        
+    	    return orders;
+    	        
+    	 }
 }
