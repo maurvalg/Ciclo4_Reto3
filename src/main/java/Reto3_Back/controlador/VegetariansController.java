@@ -62,7 +62,7 @@ public class VegetariansController {
        
            @GetMapping("/description/{description}")
     public List<Vegetarian> findByDescriptionLike(@PathVariable("description") String description) {
-        return accessoryService.findByDescriptionContaining(description);
+        return accessoryService.findByDescriptionLike(description);
     }
     
     @GetMapping("/price/{price}")
